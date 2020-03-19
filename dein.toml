@@ -1,0 +1,39 @@
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+build = './install.sh nightly'
+hook_add = 'source ~/.config/nvim/coc-options.vim'
+
+[[plugins]]
+repo = 'jacoborus/tender.vim'
+
+[[plugins]]
+repo = 'jiangmiao/auto-pairs'
+
+[[plugins]]
+repo = 'preservim/nerdtree'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+[[plugins]]
+repo = 'w0rp/ale'
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+
+[[plugins]]
+repo = 'Shougo/vimfiler.vim'
+
+[[plugins]]
+repo = 'iberianpig/tig-explorer.vim'
+
+[[plugins]]
+repo = 'rbgrouleff/bclose.vim'
+
+[[plugins]]
+repo = "MaxMEllon/vim-jsx-pretty"
+on_ft = ['javascript']
+
+[[plugins]]
+repo = "othree/yajs.vim"
+

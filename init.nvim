@@ -1,0 +1,1 @@
+let g:node_host_prog = system('echo -n $(which neovim-node-host)')
