@@ -1,4 +1,5 @@
 {
   "tsserver.enableJavascript": false,
-  "eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact", "typescript.tsx"]
+  "eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact", "typescript.tsx"],
+  "coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "javascriptreact", "typescript.tsx", "html", "css", "Markdown"],
 }
