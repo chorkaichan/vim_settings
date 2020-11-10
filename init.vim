@@ -4,22 +4,22 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/Users/kaito/.cache/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=/Users/kikuchi/.cache/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-if dein#load_state('/Users/kaito/.cache/dein')
-  call dein#begin('/Users/kaito/.cache/dein')
+if dein#load_state('/Users/kikuchi/.cache/dein')
+  call dein#begin('/Users/kikuchi/.cache/dein')
 
   " Let dein manage dein
   " Required:
-  call dein#add('/Users/kaito/.cache/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('/Users/kikuchi/.cache/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here like this:
   "call dein#add('Shougo/neosnippet.vim')
   "call dein#add('Shougo/neosnippet-snippets')
   
   " Configure toml file path
-  let s:toml_dir  = '/Users/kaito/.config/nvim'
+  let s:toml_dir  = '/Users/kikuchi/.config/nvim'
   let s:toml      = s:toml_dir . '/dein.toml'
   let s:lazy_toml = s:toml_dir . '/dein_lazy.toml'
 
@@ -76,6 +76,9 @@ hi clear CursorLine
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js'
 let g:closetag_filetypes = 'html,xhtml,phtml,js'
 let NERDTreeShowHidden = 1
+
+autocmd BufNewFile,BufRead *.tsx let b:tsx_ext_found = 1
+autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 
 if has('persistent_undo')
   let undo_path = expand('~/.vim/undo')
@@ -147,3 +150,20 @@ nnoremap <ESC><ESC> :noh<CR>
 
 let g:user_emmet_mode='a'
 let g:user_emmet_install_global = 1
+let g:coc_filetype_map = {
+  \ 'blade.php': 'html',
+  \ }
+
+set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete\ 12
+set encoding=utf-8
+
+" フォルダアイコンを表示
+let g:WebDevIconsNerdTreeBeforeGlyphPadding = ""
+let g:WebDevIconsUnicodeDecorateFolderNodes = v:true
+" after a re-source, fix syntax matching issues (concealing brackets):
+if exists('g:loaded_webdevicons')
+call webdevicons#refresh()
+endif
+
+set runtimepath+=/Users/kikuchi/.nodebrew/current/bin
+set clipboard=unnamed

@@ -1,5 +1,7 @@
 {
   "tsserver.enableJavascript": false,
-  "eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact", "typescript.tsx"],
-  "coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "javascriptreact", "typescript.tsx", "html", "css", "Markdown"],
+  "eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact", "typescript.tsx", "php", "scss"],
+  "html.enable": true,
+  "html.filetypes": ["html", "php"],
+  "html.format.enable": true
 }

@@ -105,6 +105,7 @@ source $ZSH/oh-my-zsh.sh
 alias vim='nvim'
 alias vi='nvim'
 alias ls='ls -aG'
+alias mongod='mongod --config /usr/local/etc/mongod.conf'
 
 lgrep() {
   grep -n -r -i $1 $2 | awk '{if(length($0) < 1000) print $0}'
@@ -112,3 +113,8 @@ lgrep() {
 
 export TERM=xterm-256color
 export PATH=$PATH:`npm bin -g`
+export PATH="$PATH:$HOME/.composer/vendor/bin"
+export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+export PATH="/Users/kikuchi/.nodebrew/current/bin:$PATH"
+export PATH="$PATH:/Users/kikuchi/Library/Android/sdk/platform-tools"
+alias jtags="ctags -R src && sed -i '' -E '/^(if|switch|function|module\.exports|it|describe).+language:js$/d' tags"
