@@ -1,7 +1,12 @@
 {
   "tsserver.enableJavascript": false,
-  "eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact", "typescript.tsx", "php", "scss"],
   "html.enable": true,
   "html.filetypes": ["html", "php"],
-  "html.format.enable": true
+  "html.format.enable": true,
+  "scss.lint.emptyRules": "ignore",
+  "scss.validate": false,
+  "eslint.autoFixOnSave": true,
+  "coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
+  "prettier.eslintIntegration": true,
+  "stylelintplus.autoFixOnSave": true
 }

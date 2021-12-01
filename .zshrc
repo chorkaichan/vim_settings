@@ -69,7 +69,7 @@ ZSH_THEME="refined"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-z)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -117,4 +117,5 @@ export PATH="$PATH:$HOME/.composer/vendor/bin"
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 export PATH="/Users/kikuchi/.nodebrew/current/bin:$PATH"
 export PATH="$PATH:/Users/kikuchi/Library/Android/sdk/platform-tools"
-alias jtags="ctags -R src && sed -i '' -E '/^(if|switch|function|module\.exports|it|describe).+language:js$/d' tags"
+
+alias dockerrmall='docker rm -v $(docker ps -aq -f status=exited)'

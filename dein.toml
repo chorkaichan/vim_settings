@@ -1,6 +1,8 @@
 [[plugins]]
 repo = 'neoclide/coc.nvim'
-build = './install.sh nightly'
+merged = 0
+rev = "release"
+on_i = 1
 hook_add = 'source ~/.config/nvim/coc-options.vim'
 
 [[plugins]]
@@ -71,3 +73,31 @@ hook_source = '''
 
 [[plugins]]
 repo = "cespare/vim-toml"
+
+[[plugins]]
+repo = "digitaltoad/vim-pug"
+
+[[plugins]]
+repo = "mattn/webapi-vim"
+
+[[plugins]]
+repo = "tpope/vim-fugitive"
+
+[[plugins]]
+repo = "skywind3000/asyncrun.vim"
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make -f make_mac.mak'
+
+[[plugins]]
+repo = 'Quramy/tsuquyomi'
+
+[[plugins]]
+repo = 'SirVer/ultisnips'
+
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+
+[[plugins]]
+repo = 'jxnblk/vim-mdx-js'

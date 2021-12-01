@@ -13,6 +13,7 @@ if dein#load_state('/Users/kikuchi/.cache/dein')
   " Let dein manage dein
   " Required:
   call dein#add('/Users/kikuchi/.cache/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('iamcco/markdown-preview.nvim', {'on_ft': ['markdown', 'mdx', 'pandoc.markdown', 'rmd'], 'build': 'cd app & yarn install' })
 
   " Add or remove your plugins here like this:
   "call dein#add('Shougo/neosnippet.vim')
@@ -66,6 +67,7 @@ set nowrap
 set laststatus=2
 set statusline=%F%m%r%h%w
 set noshowmode
+set mouse=ic
 
 syntax enable
 hi LineNr ctermfg=7
@@ -109,12 +111,6 @@ call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
 call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
 call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
 call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
-
-let g:ale_fixers = {
-      \ 'javascript': ['prettier-eslint']
-      \ }
-let g:ale_fix_on_save = 1
-let g:ale_javascript_prettier_use_local_config = 1
 
 let g:lightline = {
       \ 'active': {
@@ -167,3 +163,16 @@ endif
 
 set runtimepath+=/Users/kikuchi/.nodebrew/current/bin
 set clipboard=unnamed
+let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.snippets.json')), "\n"))
+let g:UltiSnipsExpandTrigger="<C-r>"
+let g:UltiSnipsJumpForwardTrigger="<C-f>"
+let g:UltiSnipsJumpBackwardTrigger="<C-b>"
+autocmd Filetype json let g:indentLine_setConceal = 0
+
+let NERDTreeShowLineNumbers=1
+" This makes the time before it updates your hover faster, other
+set updatetime=300
+
+" This makes it so that you can click a variable and a float window pops up
+autocmd CursorHold *.ts,*.tsx silent call CocActionAsync('doHover')
+let g:preview_markdown_parser="glow"
