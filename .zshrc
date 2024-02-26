@@ -1,6 +1,7 @@
+source ~/zsh-defer/zsh-defer.plugin.zsh
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/kikuchi/.oh-my-zsh"
@@ -69,7 +70,7 @@ ZSH_THEME="refined"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-z)
+plugins=(zsh-autosuggestions zsh-vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -105,17 +106,55 @@ source $ZSH/oh-my-zsh.sh
 alias vim='nvim'
 alias vi='nvim'
 alias ls='ls -aG'
-alias mongod='mongod --config /usr/local/etc/mongod.conf'
+alias mongod='mongod --config /opt/homebrew/etc/mongod.conf --fork'
 
 lgrep() {
   grep -n -r -i $1 $2 | awk '{if(length($0) < 1000) print $0}'
 }
 
 export TERM=xterm-256color
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
 export PATH=$PATH:`npm bin -g`
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
-export PATH="/Users/kikuchi/.nodebrew/current/bin:$PATH"
 export PATH="$PATH:/Users/kikuchi/Library/Android/sdk/platform-tools"
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH="$PATH:$HOME/development/flutter/bin"
+export PATH=$PATH:/Applications/"Android Studio.app"/Contents/jbr/Contents/Home/bin
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/Users/kikuchi/go/bin
+export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border --ansi --cycle"
+export PMY_TRIGGER_KEY="^I"
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 alias dockerrmall='docker rm -v $(docker ps -aq -f status=exited)'
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/kikuchi/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/kikuchi/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/kikuchi/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/kikuchi/google-cloud-sdk/completion.zsh.inc'; fi
+
+alias sim="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/"
+alias dlbr="git branch --merged | grep -E -v '(master|develop|main)' | xargs git branch -d"
+
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+
+export PATH=/Users/kikuchi/Desktop/projects/studying/solana/solana/bin:$PATH
+
+alias expo="expo whoami && expo"
+source /Users/kikuchi/.config/op/plugins.sh
+
+# zsh-defer -c "eval $(pmy init)"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
