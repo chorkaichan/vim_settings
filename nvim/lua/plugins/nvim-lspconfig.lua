@@ -155,6 +155,30 @@ return {
           workingDirectories = { mode = "auto" },
         },
       },
+      -- stylelint settings
+      stylelint_lsp = {
+        settings = {
+          autoFixOnSave = true,
+          autoFixOnFormat = true,
+          cssInJs = false,
+        },
+        filetypes = { "css", "scss" },
+      },
+      -- svelte settings
+      svelte = {},
+      -- php settings
+      intelephense = {
+        filetypes = { "php", "blade" },
+        settings = {
+          intelephense = {
+            filetypes = { "php", "blade" },
+            files = {
+              associations = { "*.php", "*.blade.php" }, -- Associating .blade.php files as well
+              maxSize = 5000000,
+            },
+          },
+        },
+      },
     },
   },
   setup = {

@@ -41,6 +41,21 @@ ls.add_snippets("typescript", {
     t("export default "),
     f(function(args) return args[1] end, {1}),
   }),
+  -- useState
+  s("uses", {
+    t("const ["),
+    i(1),
+    t(", set"),
+    f(function(args)
+      return args[1][1]:gsub("^%l", string.upper)
+    end, { 1 }),
+    t("] = useState<"),
+    i(3),
+    t(">("),
+    i(2),
+    t(")"),
+    i(0),
+  }),
 })
 
 ls.add_snippets("typescriptreact", {

@@ -5,6 +5,13 @@ return {
     local nls = require("null-ls")
     opts.sources = vim.list_extend(opts.sources or {}, {
       nls.builtins.diagnostics.markdownlint,
+      nls.builtins.formatting.prettier,
+      nls.builtins.diagnostics.phpstan.with({
+        extra_args = {
+          "--memory-limit=2G",
+        },
+      }),
+      nls.builtins.formatting.stylelint,
     })
   end,
 }
