@@ -7,6 +7,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
   callback = function()
     -- vim.cmd("Neotree action=show")
     vim.cmd("NoNeckPain")
+    vim.cmd("NoNeckPainResize 120")
   end,
 })
 
