@@ -5,6 +5,7 @@
 vim.opt.relativenumber = false
 vim.opt.shell = "/bin/bash"
 vim.g.autoformat = false
+vim.g.ray_so_theme = 'tailwind'
 
 vim.diagnostic.config({
   virtual_text = false

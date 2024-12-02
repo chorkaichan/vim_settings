@@ -114,7 +114,6 @@ lgrep() {
 
 export TERM=xterm-256color
 export ANDROID_HOME=$HOME/Library/Android/sdk
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
 export PATH=$PATH:`npm bin -g`
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
@@ -158,3 +157,18 @@ source /Users/kikuchi/.config/op/plugins.sh
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+export PATH="$HOME/.phpenv/bin:$PATH"
+eval "$(phpenv init -)"
+export PHP_RPATHS="$(brew --prefix bzip2)"
+export PHP_BUILD_CONFIGURE_OPTS="--with-bz2=$(brew --prefix bzip2) --with-iconv=$(brew --prefix libiconv) --with-tidy=$(brew --prefix tidy-html5) --with-external-pcre=$(brew --prefix pcre2) --with-zip --enable-intl --with-pear --with-sodium"
+export PKG_CONFIG_PATH="/usr/local/opt/krb5/lib/pkgconfig:/usr/local/opt/icu4c/lib/pkgconfig:/usr/local/opt/libedit/lib/pkgconfig:/usr/local/opt/libjpeg/lib/pkgconfig:/usr/local/opt/libpng/lib/pkgconfig:/usr/local/opt/libxml2/lib/pkgconfig:/usr/local/opt/libzip/lib/pkgconfig:/usr/local/opt/oniguruma/lib/pkgconfig:/usr/local/opt/openssl@1.1/lib/pkgconfig:/usr/local/opt/tidy-html5/lib/pkgconfig"
+
+. "/opt/homebrew/opt/asdf/libexec/asdf.sh"
+
+. "/opt/homebrew/opt/asdf/etc/bash_completion.d/asdf.bash"
+
+export DENO_INSTALL="/Users/kikuchi/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+export PATH=$PATH:$HOME/.maestro/bin

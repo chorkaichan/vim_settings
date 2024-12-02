@@ -6,7 +6,8 @@ vim.api.nvim_create_autocmd("VimEnter", {
   pattern = { "*" },
   callback = function()
     -- vim.cmd("Neotree action=show")
-    vim.cmd("NoNeckPain")
+    -- jvim.cmd("NoNeckPain")
+    -- vim.cmd("NoNeckPainResize 120")
   end,
 })
 
@@ -20,14 +21,15 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
   pattern = { "*.ts", "*.tsx" },
   callback = function()
-    vim.diagnostic.open_float(nil, {focus=false})
-  end,
-})
-
-vim.api.nvim_create_autocmd({ "CursorHold" }, {
-  pattern = { "*.ts", "*.tsx" },
-  callback = function()
-    vim.lsp.buf.hover()
+    local diagnostics = vim.diagnostic.get(0, { lnum = vim.fn.line('.') - 1 })
+    if vim.tbl_isempty(diagnostics) then
+      vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+        vim.lsp.handlers.hover, { focusable = false }
+      )
+      vim.lsp.buf.hover()
+    else
+      vim.diagnostic.open_float(nil, {focusable = false})
+    end
   end,
 })
 
