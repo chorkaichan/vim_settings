@@ -149,6 +149,8 @@ export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 
 export PATH=/Users/kikuchi/Desktop/projects/studying/solana/solana/bin:$PATH
 
+export PATH=/Users/kikuchi/.local/share/bob/nvim-bin:$PATH
+
 alias expo="expo whoami && expo"
 source /Users/kikuchi/.config/op/plugins.sh
 

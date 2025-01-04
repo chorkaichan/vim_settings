@@ -12,14 +12,14 @@ vim.api.nvim_create_autocmd("VimEnter", {
 })
 
 vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = { "*.ts", "*.tsx" },
+  pattern = { "*.ts", "*.tsx", "*.svelte" },
   callback = function()
     vim.cmd("EslintFixAll")
   end,
 })
 
 vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-  pattern = { "*.ts", "*.tsx" },
+  pattern = { "*.ts", "*.tsx", ".svelte" },
   callback = function()
     local diagnostics = vim.diagnostic.get(0, { lnum = vim.fn.line('.') - 1 })
     if vim.tbl_isempty(diagnostics) then
