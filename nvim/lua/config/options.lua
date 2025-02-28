@@ -4,6 +4,7 @@
 
 vim.opt.relativenumber = false
 vim.opt.shell = "/bin/bash"
+vim.g.autoformat = false
 
 vim.diagnostic.config({
   virtual_text = false,

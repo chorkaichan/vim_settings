@@ -14,7 +14,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = { "*.ts", "*.tsx", "*.svelte" },
   callback = function()
-    vim.cmd("EslintFixAll")
+    vim.lsp.buf.format()
   end,
 })
 
