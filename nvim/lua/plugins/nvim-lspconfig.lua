@@ -3,5 +3,5 @@ return {
   opts = {
     inlay_hints = { enabled = false },
     autoformat = false,
-  },
+  }
 }
